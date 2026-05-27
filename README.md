@@ -1,10 +1,8 @@
 # Airplane Mode: Local AI Coding Agent
 
-<video src="https://github.com/GuigsEvt/airplane-mode-qwen3.6/raw/main/demo.mov" controls width="100%"></video>
-
 Run a fully local coding agent powered by **Qwen 3.6 27B** -- no API keys, no internet required after setup.
 
-Inspired by [Julien Chaumond's demonstration](https://x.com/julien_c/status/2047647522173104145) of running a coding agent on a MacBook Pro at 30,000 feet -- proving that powerful local models can rival cloud-based APIs for real coding tasks.
+<video src="https://github.com/GuigsEvt/airplane-mode-qwen3.6/raw/main/demo.mov" controls width="100%"></video>
 
 ## What This Is
 
