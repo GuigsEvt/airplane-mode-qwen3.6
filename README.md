@@ -2,7 +2,7 @@
 
 Run a fully local coding agent powered by **Qwen 3.6 27B** -- no API keys, no internet required after setup.
 
-<video src="https://github.com/GuigsEvt/airplane-mode-qwen3.6/raw/main/demo.mov" controls width="100%"></video>
+https://github.com/user-attachments/assets/87f13001-a8aa-4436-a627-5b974ab1a9ec
 
 ## What This Is
 
