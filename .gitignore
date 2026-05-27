@@ -1,0 +1,31 @@
+# Models
+models/
+
+# Environment
+.env
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Pi agent
+.pi/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# llama-server runtime
+.llama-server.pid
+.llama-server.log
+
+# Temp
+tmp/

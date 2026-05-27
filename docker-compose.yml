@@ -1,0 +1,55 @@
+services:
+  llama-server:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    ports:
+      - "${LLAMA_PORT:-8080}:${LLAMA_PORT:-8080}"
+    volumes:
+      - ./models:/models:ro
+    entrypoint:
+      - /app/llama-server
+      - --model
+      - /models/${MODEL_FILE:-model.gguf}
+      - -ngl
+      - "${GPU_LAYERS:-99}"
+      - -c
+      - "${LLAMA_CTX:-32768}"
+      - -np
+      - "1"
+      - -fa
+      - "on"
+      - --batch-size
+      - "2048"
+      - --metrics
+      - --jinja
+      - --cache-type-k
+      - q8_0
+      - --cache-type-v
+      - q8_0
+      - --host
+      - "0.0.0.0"
+      - --port
+      - "${LLAMA_PORT:-8080}"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:${LLAMA_PORT:-8080}/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 60
+      start_period: 120s
+    # For NVIDIA GPUs: uncomment below
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+  pi:
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./demo:/workspace
+    depends_on:
+      llama-server:
+        condition: service_healthy

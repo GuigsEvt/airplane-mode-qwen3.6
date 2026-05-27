@@ -1,0 +1,8 @@
+models/
+*.gguf
+*.mov
+*.mp4
+.git/
+.llama-server.*
+.env
+demo.mov
